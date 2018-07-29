@@ -6,10 +6,11 @@ var topics =['bears','sharks','whales','goats','foxes','dogs','owls','horses','b
 var button=function(){
     $('#buttonsection').empty();
     for(var i=0;i<topics.length; i++){
-        var newbutton=$('<btn>');
-        newbutton.attr('data-type');
+        var newbutton=$('<button class=btn-success>');
+        newbutton.attr('data-type',topics[i]);
         newbutton.text(topics[i]);
-        $('#buttonsection').append()
+        $('#buttonsection').append(newbutton)
+        console.log(i);
     }
 }
 
