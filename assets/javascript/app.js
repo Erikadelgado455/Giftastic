@@ -10,9 +10,21 @@ var button=function(){
         newbutton.attr('data-type',topics[i]);
         newbutton.text(topics[i]);
         $('#buttonsection').append(newbutton)
-        console.log(i);
+
     }
 }
-
+var submit=function(){ 
+    $('#submit').on('click',function(event){
+        event.preventDefault();
+       var userinput= $('#userinput').val();
+       topics.push(userinput);
+       button();
+       console.log(userinput);
+       console.log(topics);
+       
+    });
+}
 button();
+submit();
+
 });
