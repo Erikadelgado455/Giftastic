@@ -35,6 +35,12 @@ var gif=function(){
         url:apisearch,
         method:'GET'
     }).done(function(response){
+        for(var i=0;i<10;i++){
+        gifstopped=response['data'][i]['fixed_height_still']['url'];
+        gifplaying=response['data'][i]['images']['fixed_height']['url'];
+        }
+        var gifimage=$('<img>');
+        gifimage.attr('data-still',)
     });
     
 }
