@@ -28,6 +28,9 @@ var submit=function(){
 var gif=function(){
     var buttonval =$(this).data('type');
     console.log(buttonval);
+
+    var Apikey='S3NXExQ136K15fjsYcVgl7EiFHU5qkBT'
+    var apisearch='http://api.giphy.com/v1/gifs/search?q='+buttonval+'&api_key=' + Apikey;
 }
 
 
