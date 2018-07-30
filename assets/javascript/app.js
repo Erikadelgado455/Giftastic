@@ -36,7 +36,7 @@ var gif=function(){
         method:'GET'
     }).done(function(response){
         $('.gifimage').empty();
-        for(var i=0;i< 10;i++){
+        for(var i=0;i<10;i++){
         gifstopped=response['data'][i]['images']['fixed_height_still']['url'];
         gifplaying=response['data'][i]['images']['fixed_height']['url'];
         
@@ -44,17 +44,20 @@ var gif=function(){
         gifs.attr('data-still',gifstopped);
         gifs.attr('data-animate',gifplaying);
         gifs.attr('src',gifstopped);
+        gifs.attr('class',gifimage)
         $('.gifimage').append(gifs)
         }
     });
-    
+    var gifvideo=function(){
+
+    }
 }
 
 
 button();
 submit();
 $(document).on('click','.gif',gif);
-
+$(document).on('click','.data',gifvideo);
 
 
 });
