@@ -2,7 +2,11 @@ $(document).ready(function(){
 
 
 var topics =['bears','sharks','whales','goats','foxes','dogs','owls','horses','bugs',]
-
+var gifstopped='';
+var gifplaying='';
+var gifCondition='';
+var gif='';
+var gifvideo='';
 var button=function(){
     $('#buttonsection').empty();
     for(var i=0;i<topics.length; i++){
@@ -44,20 +48,33 @@ var gif=function(){
         gifs.attr('data-still',gifstopped);
         gifs.attr('data-animate',gifplaying);
         gifs.attr('src',gifstopped);
-        gifs.attr('class',gifimage)
-        $('.gifimage').append(gifs)
+        gifs.attr('data-type','still');
+        gifs.addClass('gifimage');
+        $('.gifimage').append(gifs);
         }
+        
     });
     var gifvideo=function(){
-
+        var gifCondition=$(this).data('type');
+        var gifstopped=$(this).data('data-still');
+        var gifplaying=$(this).data('data-animate');
+        if(gifCondition==='data-still'){
+            $(this).attr('src',gifplaying);
+            $(this).data('type','data-animate');
+            console.log(gifCondition)
+        }
+        else if(gifCondition==='data-animate'){
+            $(this).attr('src',gifstopped);
+            console.log(true);    
+        }
+        gifvideo();
     }
 }
-
 
 button();
 submit();
 $(document).on('click','.gif',gif);
-$(document).on('click','.data',gifvideo);
-
+$(document).on('click','.gifimage',gifvideo);
+gifCondition
 
 });
