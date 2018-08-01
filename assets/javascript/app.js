@@ -76,6 +76,6 @@ $(document).ready(function(){
     submit();
     $(document).on('click','.gif',gif);
     $(document).on('click','.gifimage',gifvideo);
-    gifCondition
+    
     
     });
